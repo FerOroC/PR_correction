@@ -1,0 +1,84 @@
+{
+  "_comment": "General training hyperparameters shared across all models. Model-specific sections override where needed.",
+  "general": {
+    "num_epochs": 500,
+    "lr": 0.0001,
+    "lr_decay_factor": 0.5,
+    "lr_decay_step": 100,
+    "optimizer": "adam",
+    "loss": "l1",
+    "batch_size": 512,
+    "PRN_size": 32,
+    "input_size": 37,
+    "label_index": 15,
+    "test_files": ["5Jan_highway", "5Jan_suburban"]
+  },
+
+  "PrNet": {
+    "input_features": 19,
+    "num_hiddens": 40,
+    "num_layers": 20,
+    "dropout": 0.0
+  },
+
+  "transformer": {
+    "input_features": 19,
+    "d_model": 64,
+    "n_layers": 1,
+    "nhead": 4,
+    "dropout": 0.1
+  },
+
+  "Fcnn_Lstm": {
+    "input_features": 19,
+    "num_hiddens_fcnn": 40,
+    "num_hiddens_lstm": 40,
+    "dropout": 0.0
+  },
+
+  "LSTM": {
+    "input_features": 19,
+    "hidden_dim": 64,
+    "lstm_layers": 1,
+    "dropout": 0.0,
+    "window_size": 5
+  },
+
+  "MAMBA": {
+    "input_features": 19,
+    "hidden_dim": 64,
+    "d_state": 16,
+    "d_conv": 4,
+    "expand": 2,
+    "num_layers": 1,
+    "dropout": 0.0,
+    "window_size": 5
+  },
+
+  "1DUnet": {
+    "input_features": 19,
+    "window_size": 5
+  },
+
+  "transformer_enhanced": {
+    "input_features": 19,
+    "hidden_dim": 64,
+    "lstm_layers": 2,
+    "mlp_layers": 3,
+    "n_heads": 4,
+    "dropout": 0.0,
+    "window_size": 5
+  },
+
+  "DiffGNSS": {
+    "input_dim": 19,
+    "hidden_dim": 64,
+    "num_timesteps": 1000,
+    "beta_schedule": "linear",
+    "lambda_pri": 0.5,
+    "lambda_res": 0.5,
+    "lambda_prr": 1.0,
+    "gradient_clip": 1.0,
+    "window_size": 5
+  }
+}
